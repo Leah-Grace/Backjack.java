@@ -9,8 +9,8 @@ public class Main {
 //INSTANTIATIONS
         var game = new BlackJack();
         var deck = new Deck();
-        var dealer = new Dealer("Dealer", new ArrayList<>(), 0);
-        var player = new Player("New guy", new ArrayList<>(), 0, 0);
+        var dealer = new Dealer("Dealer");
+        var player = new Player("New guy");
         player.setCashOnHand(); //use a random number to allocate $$ to the player
 //GREET PLAYER
         game.greeting(player.getCashOnHand()); //Greet the player and let them know how much $$ they have to bet with
