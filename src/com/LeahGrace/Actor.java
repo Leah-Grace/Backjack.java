@@ -10,10 +10,10 @@ public abstract class Actor {
     public ArrayList<String> cardsArrayList;
     public int cardValue; //MOVE TO DECK
 
-    public  Actor(String name, ArrayList<String> cardsArrayList, int cardValue){
+    public  Actor(String name){
         this.name = name;
-        this.cardsArrayList = cardsArrayList;
-        this.cardValue = cardValue;
+        this.cardsArrayList = new ArrayList<String>();
+        this.cardValue = 0;
     }
 
     public String revealCards(){
