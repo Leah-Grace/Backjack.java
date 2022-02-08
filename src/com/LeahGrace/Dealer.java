@@ -5,10 +5,8 @@ import java.util.ArrayList;
 public class Dealer extends Actor implements Table{
     private String disposition;
 
-    public Dealer(String name, ArrayList<String> cardsArrayList, int cardValue) {
-        super(name,
-                cardsArrayList,
-                cardValue);
+    public Dealer(String name) {
+        super(name);
         this.disposition = "";
     }
 
