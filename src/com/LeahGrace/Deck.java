@@ -1,9 +1,13 @@
 package com.LeahGrace;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class Deck {
-    public String[] deck = {
+    public final int MAX_DEALT = 4;
+    public Map<String, Integer> dealtCards = new HashMap<>();
+    public final String[] CARDS_STRINGS = {
             "2 of Hearts", "3 of Hearts", "4 of Hearts", "5 of Hearts", "6 of Hearts", "7 of Hearts", "8 of Hearts", "9 of Hearts", "10 of Hearts", "Jack of Hearts", "Queen of Hearts", "King of Hearts", "Ace of Hearts",
             "2 of Diamonds", "3 of Diamonds", "4 of Diamonds", "5 of Diamonds", "6 of Diamonds", "7 of Diamonds", "8 of Diamonds", "9 of Diamonds", "10 of Diamonds", "Jack of Diamonds", "Queen of Diamonds", "King of Diamonds", "Ace of Diamonds",
             "2 of Clubs", "3 of Clubs", "4 of Clubs", "5 of Clubs", "6 of Clubs", "7 of Clubs", "8 of Clubs", "9 of Clubs", "10 of Clubs", "Jack of Clubs", "Queen of Clubs", "King of Clubs", "Ace of Clubs",
@@ -12,7 +16,22 @@ public class Deck {
 
    public String dealCard() {
        Random r = new Random();
-       int randomNumber = r.nextInt(deck.length);
-       return deck[randomNumber];
+       int randomNumber = r.nextInt(CARDS_STRINGS.length);
+       String card = CARDS_STRINGS[randomNumber];
+       if (dealtCards.containsKey(card)){
+           if(dealtCards.get(card) == MAX_DEALT){
+               return dealCard(); //if the card has been dealt more than four times, return a different card
+           } else if (dealtCards.get(card) < MAX_DEALT){
+               dealtCards.put(card, ((int)dealtCards.get(card) + 1)); //if the card has been dealt less than four times, increment the count in the map
+           }
+       } else{
+           dealtCards.put(card, 1); //new cards are added to the HashMap with count of 1.
+       }
+       return card;
    }
+
+   public void shuffleCards(){
+       dealtCards.clear(); //clear the HashMap/count of cards
+   }
+
 }
