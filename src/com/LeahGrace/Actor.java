@@ -2,13 +2,13 @@ package com.LeahGrace;
 
 import java.util.ArrayList;
 
-public class Actor {
-    private static final int FACE_CARD = 10;
-    private static final int LOW_ACE = 1;
-    private static final int HIGH_ACE_DIFFERENTIAL = 10;
+public abstract class Actor {
+    private static final int FACE_CARD = 10; //MOVE TO DECK
+    private static final int LOW_ACE = 1; //MOVE TO DECK
+    private static final int HIGH_ACE_DIFFERENTIAL = 10; //MOVE TO DECK
     private String name;
     public ArrayList<String> cardsArrayList;
-    public int cardValue;
+    public int cardValue; //MOVE TO DECK
 
     public  Actor(String name, ArrayList<String> cardsArrayList, int cardValue){
         this.name = name;
