@@ -1,7 +1,5 @@
 package com.LeahGrace;
 
-import java.util.ArrayList;
-
 public class Dealer extends Actor implements Table{
     private String disposition;
 
@@ -16,7 +14,7 @@ public class Dealer extends Actor implements Table{
         System.out.println("The dealer reveals they have been dealt the " + firstCard);
         this.cardsArrayList.add(firstCard);
         this.cardsArrayList.add(secondCard);
-        calculatePoints();
+        Deck.calculatePoints(this);
         setDisposition();
         System.out.println("Side note: The dealer has " + getCardValue() + " and chooses to " + this.disposition);
 
@@ -32,7 +30,7 @@ public class Dealer extends Actor implements Table{
         System.out.println("The dealer chooses to " + this.disposition);
         System.out.println("The dealer reveals they have been dealt the " + card);
         this.cardsArrayList.add(card);
-        this.cardValue = calculatePoints();
+        this.cardValue = Deck.calculatePoints(this);
         setDisposition();
         if (this.cardsArrayList.size() == 5 && this.cardValue <= 21){
             System.out.println("The Dealer has five card all under 21 so they win");
