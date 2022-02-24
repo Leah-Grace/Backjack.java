@@ -1,17 +1,25 @@
-Move calculations out of Actor classes
+
+
+
+
+**Revise Card Calculation logic
+**Refactor Card representation - - Research enums!
 
 
 Action items for revised version:
 1. I'd like to see the Deck class reworked to be slightly more object oriented especially in regards to the cards.
     - For this you should try and make a Card CLASS, with the properties Suit and Rank. Suit should probably be an enum, while Rank can either be an Enum, or just an integer.
     - Once you've built the Card class, see if you can rebuild the deck class.
-    - Stuff like convertCardVale() in the Actor class can be put in the Card class b/c that's technically more related to the Card than the actor. The actor doesn't convert the value per se but the card has innate value in the game.
+
 3. Improve the Deck class so that when you draw a card it gets removed. In order to do this, you may have to convert the Array[] into an ArrayList<Card>
 4. Consider making another class or incorporating into the Blackjack class some of the logic you have in your main method.
     - Normally you won't want all that logic in your main class, find a way to compartmentalize it in another class.
+
 5. I don't entirely get why we have the Table interface. I think you can disperse the logic in the Table interface to other parts of the code, maybe the Actor class?
+
 6. Incorporate a while(true) loop to allow the user to keep playing once the game is over.
     - THIS ISN'T A PRIORITY, but a nice to have if you have time.
+
 7. Add some styling in the console so there's more spacing & a bit easier to read for those playing the game.
     - THIS ISN'T A PRIORITY, also a nice to have if you have time.
 
@@ -19,3 +27,5 @@ Overall, a fantastic MVP to start, with room to improve by following the action 
 
 Completed:
 2. Make 'Actor' into an abstract class
+**Move Deck behavior and  calculations out of Actor Classes
+    - Stuff like convertCardVale() in the Actor class can be put in the Card class b/c that's technically more related to the Card than the actor. The actor doesn't convert the value per se but the card has innate value in the game.

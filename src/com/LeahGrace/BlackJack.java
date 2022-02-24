@@ -1,27 +1,29 @@
 package com.LeahGrace;
 
 public class BlackJack {
-    private static final int BLINDS = 100;
 
+    private static final int BLINDS = 100;
     private static final int BLACKJACK = 21;
-    private int playerBet = 0;
     final private double ODDS = 1.5;
+
+    private int playerBet = 0;
+    public int playerWinnings = 0;
+
 
     public void greeting(int cash){
         System.out.println("Welcome to BlackJack \n Blinds are $100 and the game plays 3 to 2");
-        System.out.println("You have $" + cash + " in cash. Would you like to play? \n Enter Y or N");
+        System.out.println("You have $" + cash + " in cash. Would you like to play? \n Enter Yes or No");
 
     }
 
     public void pass(int cash) {
-        System.out.println("You leave the table with $" + cash);
-        System.exit(0);
+        System.out.println("You end the game with $" + cash);
     }
 
     public void roundOne() {
         System.out.println("The dealer shuffles the deck and deals two cards to you and two to themselves");
         this.playerBet += BLINDS;
-        System.out.println("The player has wagered $" + getPlayerBet());
+        System.out.println("You wager $" + getPlayerBet());
     }
 
     public void nextRoundProposition(){
